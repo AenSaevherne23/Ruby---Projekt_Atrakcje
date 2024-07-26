@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center">Kraje</h1>
+
+<div class="row bg-primary bg-gradient bg-opacity-50">
+  <div class="col"><strong>Nazwa kraju:</strong></div>
+  <div class="col"><strong>Stolica:</strong></div>
+  <div class="col"><strong>Powierzchnia:</strong></div>
+  <div class="col"><strong>Lista miast:</strong></div>
+  <div class="col"></div>
+</div>
+
+<div id="countries">
+  <% @countries.each do |country| %>
+    <%= render country %>
+  <% end %>
+</div>
+
+<%= link_to "Nowy kraj", new_country_path, class: "btn btn-sm btn-primary" %>

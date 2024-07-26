@@ -1,0 +1,14 @@
+<div id="<%= dom_id country %>">
+  <div class="row bg-info bg-gradient bg-opacity-25 ">
+    <div class="col"><%= country.name %></div>
+    <div class="col"><%= country.capital %></div>
+    <div class="col"><%= country.area %></div>
+    <div class="col">
+      <% country.cities.each do |city| %>
+        <%= city.name_city %> <br>
+      <% end %>
+    </div>
+    <div class="col"><%= link_to "Pokaż ten kraj", country, class: "btn btn-sm btn-primary" %></div>
+  </div>
+
+</div>

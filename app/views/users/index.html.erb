@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center">Użytkownicy</h1>
+
+<div class="row bg-primary bg-gradient bg-opacity-50">
+  <div class="col"><strong>Nazwa użytkownika:</strong></div>
+  <div class="col"><strong>E-mail:</strong></div>
+  <div class="col"><strong>Hasło:</strong></div>
+  <div class="col"><strong>Odwiedzone miasta:</strong></div>
+  <div class="col"></div>
+</div>
+
+<div id="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
+</div>
+
+<%= link_to "Nowy użytkownik", new_user_path, class: "btn btn-sm btn-primary" %>

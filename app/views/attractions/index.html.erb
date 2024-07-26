@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center">Atrakcje</h1>
+
+<div class="row bg-primary bg-gradient bg-opacity-50">
+  <div class="col"><strong>Nazwa atrakcji:</strong></div>
+  <div class="col"><strong>Kategoria:</strong></div>
+  <div class="col"><strong>Opis:</strong></div>
+  <div class="col"><strong>Miasto:</strong></div>
+  <div class="col"></div>
+</div>
+
+<div id="attractions">
+  <% @attractions.each do |attraction| %>
+    <%= render attraction %>
+  <% end %>
+</div>
+
+<%= link_to "Nowa atrakcja", new_attraction_path, class: "btn btn-sm btn-primary" %>

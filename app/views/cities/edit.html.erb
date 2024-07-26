@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Edycja miasta</h1>
+
+  <%= render "form", city: @city %>
+
+  <div class="mt-3">
+    <%= link_to "Pokaż to miasto", @city, class: "btn btn-info mr-2" %>
+    <%= link_to "Powrót do miast", cities_path, class: "btn btn-secondary" %>
+  </div>
+</div>

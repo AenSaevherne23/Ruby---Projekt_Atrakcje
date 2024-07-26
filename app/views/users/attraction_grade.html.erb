@@ -1,0 +1,13 @@
+<%= form_with url: grade_attraction_save_path do |form| %>
+
+  <h2> Ocena <%= @attraction.name_attraction %> od użytkownika <%= @user.name_user %> </h2>
+
+  <div>
+    <%= form.label 'Ocena', style: "display: block" %>
+    <%= form.number_field :grade, value: @grade.grade, in: 1.0..10.0, step: 0.5  %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

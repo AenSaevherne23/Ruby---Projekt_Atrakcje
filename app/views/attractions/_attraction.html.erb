@@ -1,0 +1,10 @@
+<div id="<%= dom_id attraction %>">
+  <div class="row bg-info bg-gradient bg-opacity-25">
+    <div class="col"><%= attraction.name_attraction %></div>
+    <div class="col"><%= attraction.category %></div>
+    <div class="col"><%= attraction.description %></div>
+    <div class="col"><%= attraction.city.name_city %></div>
+    <div class="col"><%= link_to "Pokaż mi tę atrakcję", attraction, class: "btn btn-sm btn-primary" %></div>
+  </div>
+
+</div>

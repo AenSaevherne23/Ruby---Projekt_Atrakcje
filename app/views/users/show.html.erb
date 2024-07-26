@@ -1,0 +1,39 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Użytkownik</h1>
+  <div class="row bg-primary bg-gradient bg-opacity-50">
+    <div class="col"><strong>Nazwa użytkownika:</strong></div>
+    <div class="col"><strong>E-mail:</strong></div>
+    <div class="col"><strong>Hasło:</strong></div>
+  </div>
+  <div class="row bg-info bg-gradient bg-opacity-25">
+    <div class="col"><%= @user.name_user %></div>
+    <div class="col"><%= @user.email %></div>
+    <div class="col"><%= @user.password %></div>
+  </div>
+  <div class="row bg-info bg-gradient bg-opacity-25">
+    <% @user.cities.each do |city| %>
+      <%= turbo_frame_tag 'UC-'+@user.id.to_s+'-'+city.id.to_s do %>
+        <div class="row bg-secondary bg-gradient bg-opacity-10 border-bottom">
+          <div class="col-4"><h6><%= city.name_city %></h6></div>
+          <div class="col-2"></div>
+          <div class="col-2"><%= link_to 'Oceny', grade_user_path(@user.id, city.id), data:{turbo_frame: 'UC-'+@user.id.to_s+'-'+city.id.to_s}, class: "btn btn-sm btn-primary" %> </div>
+        </div>
+        <div class="row">
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="mt-3">
+    <div class="d-flex justify-content-between">
+      <div>
+        <%= link_to "Edytuj tego użytkownika", edit_user_path(@user), class: "btn btn-primary mr-2" %>
+        <%= link_to "Powrót do użytkowników", users_path, class: "btn btn-secondary mr-2" %>
+      </div>
+      <div>
+        <%= button_to "Usuń tego użytkownika", @user, method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

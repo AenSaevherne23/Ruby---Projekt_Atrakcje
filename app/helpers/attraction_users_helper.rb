@@ -1,0 +1,2 @@
+module AttractionUsersHelper
+end

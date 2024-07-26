@@ -1,0 +1,19 @@
+<div id="<%= dom_id city %>">
+  <div class="row bg-info bg-gradient bg-opacity-25 ">
+    <div class="col"><%= city.name_city %></div>
+    <div class="col"><%= city.population %></div>
+    <div class="col"><%= city.country.name %></div>
+    <div class="col">
+      <% city.attractions.each do |attraction| %>
+        <%= attraction.name_attraction %> <br>
+      <% end %>
+    </div>
+    <div class="col">
+      <% city.users.each do |user| %>
+        <%= user.name_user %><br>
+      <% end %>
+    </div>
+    <div class="col"><%= link_to "Pokaż mi to miasto", city, class: "btn btn-sm btn-primary" %></div>
+  </div>
+
+</div>

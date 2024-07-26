@@ -1,0 +1,46 @@
+<%= form_with(model: attraction, class: "form-horizontal") do |form| %>
+  <% if attraction.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading"><%= pluralize(attraction.errors.count, "błąd") %> uniemożliwiło zapisanie tej atrakcji:</h4>
+      <ul>
+        <% attraction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name_attraction, "Nazwa atrakcji", class: "col-form-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name_attraction, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category, "Kategoria", class: "col-form-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.text_field :category, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, "Opis", class: "col-form-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :city_id, "Miasto", class: "col-form-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.collection_select :city_id, City.all, :id, :name_city, { prompt: "Wybierz miasto" }, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= form.submit "Zapisz", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

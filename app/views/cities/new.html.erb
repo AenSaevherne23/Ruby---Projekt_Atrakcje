@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Nowe miasto</h1>
+
+  <%= render "form", city: @city %>
+
+  <div class="mt-3">
+    <%= link_to "Powrót do miast", cities_path, class: "btn btn-secondary" %>
+  </div>
+</div>
